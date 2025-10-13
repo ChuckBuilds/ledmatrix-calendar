@@ -4,14 +4,15 @@
   "properties": {
     "enabled": {
       "type": "boolean",
-      "default": true,
+      "default": false,
       "description": "Enable or disable the calendar plugin"
     },
     "update_interval": {
-      "type": "number",
-      "default": 300,
+      "type": "integer",
+      "default": 3600,
       "minimum": 60,
-      "description": "Update interval in seconds (minimum 1 minute)"
+      "maximum": 86400,
+      "description": "Update interval in seconds"
     },
     "max_events": {
       "type": "number",
@@ -48,12 +49,6 @@
       "default": 10,
       "minimum": 5,
       "description": "Seconds between rotating displayed events"
-    },
-    "display_duration": {
-      "type": "number",
-      "default": 30,
-      "minimum": 10,
-      "description": "How long to display calendar info in seconds"
     }
   },
   "required": ["enabled", "credentials_file"]
